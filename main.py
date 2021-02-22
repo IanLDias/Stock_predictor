@@ -4,20 +4,23 @@ import streamlit as st
 from Data.raw_data import load_data, plot_raw_data
 from Data.forecast import forecast
 from Data.news import news
-from config_var import stocks, today
-
+from config_var import today
+from Data.symbol_names import stocks, get_information
 from fbprophet.plot import plot_plotly
 
 #Drop down menu of stocks (ticker form)
-selected_stock = st.sidebar.selectbox("Select dataset for prediction", list(stocks.keys()))
-stock = stocks[selected_stock]
-st.title(f"Stock Prediction for {stock}")
+stock_name = st.sidebar.selectbox("Select dataset for prediction", list(stocks.keys()))
+stock_ticker = stocks[stock_name]
 
+
+st.title(f"Stock Prediction for {stock_name}")
+
+st.write(get_information(stock_name))
 #analysis = ["Raw Data", "Forecast Data", "News"]
 #selected_analysis = st.selectbox("Analysis", analysis)
 
 #Loads the data associated with the stock
-data = load_data(selected_stock)
+data = load_data(stock_ticker)
 
 #Plotting the raw data
 def raw_data():
@@ -46,8 +49,8 @@ st.write('Forecast components')
 components_fig = m.plot_components(forecast)
 st.write(components_fig)
 
-st.title(f"News for {stock}")   
-articles = news(stock)
+st.title(f"News for {stock_name}")   
+articles = news(stock_name)
 for article in articles[:10]:
     st.subheader(article['title'])
     st.markdown(article['description'])
