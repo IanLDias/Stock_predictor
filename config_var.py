@@ -11,6 +11,11 @@ today = date.today().strftime("%Y-%m-%d")
 #1) Save code to github
 #2) Connect to EC2 instance
 #    ssh -i "streamlit_app.pem" ubuntu@ec2-####.us-east-2.compute.amazonaws.com
-#3) git clone repo
+#3) Remove current remove (rm -rf <name>), git clone new repo
 #4) Delete/update docker on the VM
+#5) docker image build -t streamlit:app
+#   Delete current container
+#       docker container ls -a
+#       Delete contaiber by id: docker container rm <container id> 
+#6) docker container run -p 8501:8501 -d streamlit:app
 
