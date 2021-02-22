@@ -11,7 +11,7 @@ from fbprophet.plot import plot_plotly
 
 
 #Drop down menu of stocks (ticker form)
-stock_name = st.sidebar.selectbox("Select dataset for prediction", list(stocks.keys()))
+stock_name = st.sidebar.selectbox("Select S&P500 company", list(stocks.keys()))
 stock_ticker = stocks[stock_name]
 
 
