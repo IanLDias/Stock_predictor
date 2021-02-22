@@ -9,7 +9,7 @@ def load_data(ticker):
     data.reset_index(inplace=True)
     return data
 
-def plot_raw_data(data):
+def plot_raw_data_stock(data):
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name='stock_open'))
     fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name='stock_close'))
