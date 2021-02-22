@@ -10,7 +10,7 @@ today = date.today().strftime("%Y-%m-%d")
 #Steps to update:
 #1) Save code to github
 #2) Connect to EC2 instance
-#    ssh -i "streamlit_app.pem" ubuntu@ec2-18-189-184-147.us-east-2.compute.amazonaws.com
+#    ssh -i "streamlit_app.pem" ubuntu@ec2-####.us-east-2.compute.amazonaws.com
 #3) git clone repo
 #4) Delete/update docker on the VM
 
