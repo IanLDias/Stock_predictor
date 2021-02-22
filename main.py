@@ -1,10 +1,10 @@
 import streamlit as st
 
-
+    
 from Data.raw_data import load_data, plot_raw_data
 from Data.forecast import forecast
 from Data.news import news
-from config import stocks, today
+from config_var import stocks, today
 
 from fbprophet.plot import plot_plotly
 

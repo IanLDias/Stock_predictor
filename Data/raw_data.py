@@ -1,6 +1,6 @@
 import streamlit as st
 import yfinance as yf
-from config import start_date, today
+from config_var import start_date, today
 from plotly import graph_objects as go
 
 @st.cache

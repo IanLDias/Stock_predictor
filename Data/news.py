@@ -1,4 +1,4 @@
-from config import today
+from config_var import today
 import streamlit as st
 import requests
 @st.cache
