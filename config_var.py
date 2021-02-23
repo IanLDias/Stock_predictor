@@ -25,10 +25,10 @@ def stock_news_url(stock):
 #    ssh -i "streamlit_app.pem" ubuntu@ec2-####.us-east-2.compute.amazonaws.com
 #3) Remove current remove (rm -rf <name>), git clone new repo
 #4) Delete/update docker on the VM
-#5) docker image build -t streamlit:app .
+#5) docker build -t <file_name>:<tag> .
 #   Delete current container
 #       docker container ls -a
 #       docker container stop <container id?
 #       docker container rm <container id> 
-#6) docker container run -p 8501:8501 -d streamlit:app
+#6) docker run -p 8501:8501 -d <image>
 

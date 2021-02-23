@@ -22,8 +22,8 @@ if selection == "Cryptocurrency":
     crypto_class.crypto_func()
     crypto_class.forecast_viz()
 
-# country = st.sidebar.selectbox("Select country", ["Australia", "United States"])
-# if country:
-#     economic_term = st.sidebar.multiselect("Economic measures", ["Gross Domestic Product", 
-#     "Interest Rate", "Unemployment Rate", "Retail sales performance"])
+country = st.sidebar.selectbox("Select country", ["Australia", "United States"])
+if country:
+    economic_term = st.sidebar.multiselect("Economic measures", ["Gross Domestic Product", 
+    "Interest Rate", "Unemployment Rate", "Retail sales performance"])
 
