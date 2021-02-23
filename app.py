@@ -1,6 +1,6 @@
 import streamlit as st
 from stocks import Stock_viz, Stock_forecast
-from crypto import crpyto_func
+from crypto import Crypto
 
 Pages = ["Stocks", "Cryptocurrency"]
 st.sidebar.title("Navigation")
@@ -16,7 +16,11 @@ if selection == "Stocks":
     stock_forecast.forecast_viz()
 
 if selection == "Cryptocurrency":
-    crpyto_func()
+    crypto_class = Crypto()
+    crypto_class.news_viz()
+    crypto_class.crypto_summary()
+    crypto_class.crypto_func()
+    crypto_class.forecast_viz()
 
 country = st.sidebar.selectbox("Select country", ["Australia", "United States"])
 if country:

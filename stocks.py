@@ -5,7 +5,8 @@ import streamlit as st
 from database.data.raw_data import load_data, plot_raw_data_stock
 from database.data.forecast import forecast
 from database.data.news import news
-from database.data.symbol_names import stocks, get_information
+from database.data.symbol_names import stocks
+from database.data.summaries import get_information
 from config_var import today
 from fbprophet.plot import plot_plotly
 
@@ -23,7 +24,7 @@ class Stock_viz(object):
         'Lots of widgets. Returns the stock_ticker (symbol) they select'
         self.stock_name = st.sidebar.selectbox("Select S&P500 company", list(stocks.keys()))
         self.symbol = stocks[self.stock_name]
-        st.title(f"Stock Prediction for {self.stock_name}")
+        st.title(f"Overview for {self.stock_name}")
         st.header("Description")
         st.write(get_information(self.stock_name))
         return self.symbol, self.stock_name

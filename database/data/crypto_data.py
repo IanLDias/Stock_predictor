@@ -1,20 +1,10 @@
-url = f"https://api.coinranking.com/v2/coins"
+
 import requests
 from datetime import datetime
 import pandas as pd
 from plotly import graph_objects as go
-
-requested_data = requests.get(url)
-
-data = requested_data.json()['data']['coins']
-
-
-coins = {}
-for coin in data:
-    coins[coin['name']] = coin['symbol'] 
-
-API_KEY_COMP = '17666b6cf3df20d3d971212b0646e2a15447b36bf7b7a4974283778402417772'
-BASE_URL_COMP = 'https://min-api.cryptocompare.com/'
+from database.data.symbol_names import coins
+from config_var import API_KEY_COMP, BASE_URL_COMP
 
 def convert_unix_to_datetime(date_col):
     'Converts the unix dates into YYYY-MM-DD'
@@ -32,8 +22,6 @@ def crypto_gather_data(name):
     df = pd.DataFrame(data)
     df['time'] = convert_unix_to_datetime(df['time'])
     return df
-
-print(crypto_gather_data('Bitcoin'))
 
 def plot_raw_data_crypto(data):
     fig = go.Figure()
